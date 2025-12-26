@@ -13,20 +13,20 @@ function setDarkMode() {
       $("p").addClass("text-dark-mode");
       $("div.alegere").addClass("alegeredk");
       $("div.alegere").removeClass("alegerelight");
-      $("div.social-l").addClass("social-d");
       $("div.alegere-container").addClass("alegere-container-dark");
+      $("div.social-l").addClass("social-d");
 
     } else {
       $("body").removeClass("dark-theme");
-      $("div").removeClass("navbr-dark-mode");
+      $("div.navbr").removeClass("navbr-dark-mode");
       $("h1").removeClass("text-dark-mode");
       $("h2").removeClass("text-dark-mode");
       $("h3").removeClass("text-dark-mode");
       $("p").removeClass("text-dark-mode");
       $("div.alegere").removeClass("alegeredk");
       $("div.alegere").addClass("alegerelight");
-      $("div.social-l").removeClass("social-d");
       $("div.alegere-container").removeClass("alegere-container-dark");
+      $("div.social-l").removeClass("social-d");
     }
     
   }
@@ -69,10 +69,24 @@ function formChange(){
   Phtotchange();
   setDarkMode();
   formChange();
-  // Atașează evenimentul click pe elementul .theme-switch
+
   $(".theme-switch").on("click", function() {
     localStorage.DarkModeCounter = Number(localStorage.DarkModeCounter)+1;
     setDarkMode();
     Phtotchange();
     formChange();
+  });
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_5devxd1",
+      "template_6smwxcu",
+      this
+    ).then(() => {
+      this.reset();
+    }, (error) => {
+      console.log(error);
+    });
   });

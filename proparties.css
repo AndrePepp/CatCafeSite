@@ -43,7 +43,11 @@ span.amazingtext{
 
 div.navbr{
 	background: linear-gradient(to right, #7d65e7, #c23a41);
+	position: fixed;
 	overflow: hidden;
+	top: 0px;
+	width: 100%;
+	z-index: 1000000;
 }
 .genius{
 	width: 100%;
@@ -84,20 +88,20 @@ a{
 .color-overlay{
 	background-color: rgba(0,0,0,.3);
 	position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 20%;
-    left: 0;
-    z-index: 99; 
-	overflow: hidden;
-	white-space: nowrap;
-	margin-top: 52px;
-	display: block;
+	inset: 0;
+    z-index: 2;
 }
 .max-banner{
-	display: block;
-	height: 80%;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.max-front img {
+	position: relative;
+	z-index: 1;
 	width: 100%;
+	height: auto;
 }
 
 .max-front{
@@ -443,21 +447,18 @@ p.yey {
 .wrapper .insta:hover .tooltip,
 .wrapper .insta:hover .tooltip::before{
 	background: rgb(255, 14, 176);
-	color: #fff;
 }
 
 .wrapper .yt:hover span,
 .wrapper .yt:hover .tooltip,
 .wrapper .yt:hover .tooltip::before{
 	background: rgb(255, 0, 0);
-	color: #fff;
 }
 
 .wrapper .github:hover span,
 .wrapper .github:hover .tooltip,
 .wrapper .github:hover .tooltip::before{
 	background: rgb(32, 32, 32);
-	color: #fff;
 }
 .social-l{
 	background: linear-gradient(to right, #7d65e7, #c23a41)
@@ -465,12 +466,28 @@ p.yey {
 .social-d{
 	background: linear-gradient(to right, #2f4f4f, #315731);
 }
+
+.wrapper .insta span ion-icon {
+	color: #e1306c;
+}
+
+.wrapper .yt span ion-icon {
+	color: #ff0000;
+}
+
+.wrapper .github span ion-icon {
+	color: #000;
+}
+
+.wrapper .icon:hover ion-icon{
+	color: #fff
+}
+
 input[type="text"],
 select,
 textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid;
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 6px;
@@ -481,19 +498,31 @@ textarea {
 
 
 .input-light-mode {
-  background-color: #ffffff;
-  color: #cecece;
-  border-color: #cecece;
- 
+	background-color: #ffffff;
+	color: #000000;
+	border: 1px solid #bfbfbf;
 }
-
 
 .input-dark-mode {
-  background-color: #2e2e2e;
-  color: #4d4d4d;
-  border-color: #4d4c4c;
-
+	background-color: #2e2e2e;
+	color: #ffffff;
+	border: 1px solid #6a6a6a;
 }
+
+.input-light-mode:focus {
+	border-color: #9403ce;
+}
+
+.input-dark-mode:focus {
+	border-color: #7adfa0;
+}
+
+.input-light-mode,
+.input-dark-mode {
+	outline: none;
+}
+
+
 
   
   input[type=submit] {
@@ -511,6 +540,7 @@ textarea {
   
 .header{
 	padding-left:40px;
+	margin-top: 60px;
 	font-size: xxx-large;
 	font-family: ihcs, sans-serif;
 	letter-spacing: 5px;
