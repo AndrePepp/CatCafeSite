@@ -6,15 +6,19 @@
 <title>Contact</title>
 <link rel="stylesheet" href="proparties.css">
 <script language="JavaScript" type="text/javascript" src="scriptig.js"></script>
-<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
-<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
 <link rel="manifest" href="icon/site.webmanifest">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("U3_duTgI6lvEQpsv0");
+  })();
+</script>
+
 </head>
 
 <body>
@@ -31,9 +35,9 @@
   <h1 class="header">Zi kontakt site</h1>
     
   <div class="container" style="min-height: 75%;">
-    <form style="left: 20%;">
+    <form style="left: 20%;" id="contact-form">
       <label for="fname">Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+      <input type="text" id="fname" name="name" placeholder="Your name.." required>
   
       <label for="zone">Zone</label>
       <select required id="zone" name="zone" >
@@ -78,6 +82,8 @@
 <script src="scriptig.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </body>
 
 </html>
